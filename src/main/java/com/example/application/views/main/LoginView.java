@@ -68,11 +68,8 @@ public class LoginView extends VerticalLayout {
        UsuarioController con = new UsuarioController();
        UsuarioEnt usu = con.listUsuario(nome).get(0);
 
-       if(usu.getSenha().equals(senha)){
-          //Notification notification = Notification
-                  //.show("Financial report generated");
+       if(usu.getSenha().equals(senha))
           return true;
-       }
        return false;
     }
 

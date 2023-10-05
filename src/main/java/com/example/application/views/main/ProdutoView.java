@@ -23,10 +23,12 @@ public class ProdutoView extends VerticalLayout {
         TextField TextFieldNome = new TextField("Nome Produto:");
         TextField TextFieldEstoque = new TextField("Estoque:");
         TextField TextFieldPreco = new TextField("Preço:");
+        Button BtnProd = new Button("Ver Produtos");
+        Button BtnSair = new Button("Sair");
 
         ProdutoEnt produto = new ProdutoEnt();
         var layout = new VerticalLayout(
-                TextFieldNome,TextFieldEstoque,TextFieldPreco,BtnGravar);
+                TextFieldNome,TextFieldEstoque,TextFieldPreco,BtnGravar,BtnProd,BtnSair);
 
         BtnGravar.addClickListener(e ->{
             produto.setNome(TextFieldNome.getValue());
@@ -34,6 +36,14 @@ public class ProdutoView extends VerticalLayout {
             produto.setPreco(Double.parseDouble(TextFieldPreco.getValue()));
             TextFieldPreco.getValue();
             proControl.createProduto(produto);
+            UI.getCurrent().navigate(GridProdutos.class);
+        });
+
+        BtnProd.addClickListener(x -> {
+            UI.getCurrent().navigate(GridProdutos.class);
+        });
+
+        BtnSair.addClickListener(x -> {
             UI.getCurrent().navigate(LoginView.class);
         });
 

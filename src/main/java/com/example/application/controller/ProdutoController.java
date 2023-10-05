@@ -9,4 +9,8 @@ public class ProdutoController {
     public void createProduto(ProdutoEnt prod) {
         proModel.InsertProduto(prod);
     }
+
+    public void selectProduto(){
+        proModel.getProduto();
+    }
 }
