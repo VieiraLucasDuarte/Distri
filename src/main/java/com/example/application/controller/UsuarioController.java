@@ -11,6 +11,11 @@ public class UsuarioController {
 
    public List<UsuarioEnt> listUsuario(String nome) {
       List<UsuarioEnt> usuarios = new ArrayList<>();
-      return usuarioDao.getUsuarioByNome(nome);
+      return usuarioDao.getByNome(nome);
+   }
+
+   public void create(String nome, String senha) {
+      List<UsuarioEnt> usuarios = new ArrayList<>();
+      usuarioDao.create(nome, senha);
    }
 }
